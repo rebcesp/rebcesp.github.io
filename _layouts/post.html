@@ -3,12 +3,12 @@ layout: default
 ---
 
 <div id="post">
-    <div id="<i>post__title</i>">
-    	<h1>{{ page.title }}</h1>
+    <div id="post__title">
+        <h1><i>{{ page.title }}</i></h1>
     </div>
-    <div id="<i>post__date</i>">
+    <div id="post__date">
     	<p>
-            {{ page.date | date: '%d de'}}
+            <i>{{ page.date | date: '%d de'}}
             {% assign m = page.date | date: "%-m" %}
                 {% case m %}
                 {% when '1' %}Enero
@@ -25,7 +25,7 @@ layout: default
                 {% when '12' %}Diciembre
                 {% endcase %}
             {{ page.date | date: 'del %Y' }}
-        </p>
+           </i></p>
     </div>
     <div id="post__meta">
     	<p>{{ tags_content }}</p>
