@@ -6,7 +6,7 @@ permalink: "blog/hola-mundo"
 published: yes
 ---
 
-# Primer post con chuletas de la sintaxis para markdown y varios :P
+# cheatSheet markdown
 
 <br>
 
