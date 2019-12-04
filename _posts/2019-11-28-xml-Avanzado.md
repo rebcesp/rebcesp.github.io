@@ -6,7 +6,7 @@ permalink: "blog/xml-Avanzado"
 published: yes
 ---
 
-<img class="differenteSize40" src="https://lisia2.files.wordpress.com/2015/02/xml_logo.gif" alt="logoXML" style="margin:auto; display:block;">
+<img class="differentSize40" src="https://lisia2.files.wordpress.com/2015/02/xml_logo.gif" alt="logoXML" style="margin:auto; display:block;">
 
 # _0x01 - Introdución_
 
