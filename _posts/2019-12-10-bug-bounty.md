@@ -6,4 +6,4 @@ permalink: "blog/bug-bounty"
 published: yes
 ---
 
-<img class="differentSize50" src="/assets/img/ants.png" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
+<img class="differentSize30" src="/assets/img/ants.png" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
