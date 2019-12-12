@@ -46,7 +46,21 @@ Las **Solicitudes(Requests)** de inicio de la computadora generalmente se conoce
 
 Los _servidores_ de los sitios web y las aplicaciones son los que **RECIBEN** las solicitudes. Unas de las pautas a tomar  sobre cómo las computadoras se comunican a traves de internet es por ejemplo la `Solicitud de comentarios` (RFC), esto define sobre cómo deben comportarse las computadoras.
 
-El `Protocolo de transferencia de hipertexto (HTTP)`, define cómo su navegador de Internet se comunica con un servidor remoto mediante el `Protocolo de Internet (IP)`
+El `Protocolo de transferencia de hipertexto (HTTP)`, define cómo su navegador de Internet se comunica con un servidor remoto mediante el `Protocolo de Internet (IP)`. En este escenario, tanto el cliente como el servidor deben acordar implementar los mismos estándares para que puedan entender los paquetes que cada uno envía y recibe.
+
+## Sitio Web 
+
+Empezaremos viendo un poco técnicamente de lo que se trata cuando accedemos a un sitio web y centrandonos en el protocolo `HTTP`
+
+---
+* **0x01->** Extracción del nombre de dominio
+    
+* 
+---
+
+
+
+
 
 
 
