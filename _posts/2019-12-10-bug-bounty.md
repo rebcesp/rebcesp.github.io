@@ -59,10 +59,14 @@ Empezaremos viendo un poco técnicamente de lo que se trata cuando accedemos a u
 ---
 * ## **0x01»** Extracción del nombre de dominio
 
-Vamos a probar ingresando a la página donde se consultan preguntas de programación: [https://stackoverflow.com] (Stackoverflow)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
+Vamos a probar ingresando a la página donde se consultan preguntas de programación: [StackOverflow] (https://stackoverflow.com)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
 El dominio sirve como una forma de encontrar la dirección del servidor.
 
 * ## **0x02 »** Resolver una dirección IP
+
+Al insertar un dominio en el navegador "ese dominio resolvera el dominio por la IP" y cada dominio en Internet debe resolver una dirección IP para funcionar.
+
+Partimos de que existen dos tipos de direcciones IP: `Protcolo de Internet Version 4(Ipv4)` y `Protoclo de Internet Version 6 (Ipv6)`. 
 
 
 
