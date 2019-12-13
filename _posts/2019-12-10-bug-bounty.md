@@ -6,7 +6,7 @@ permalink: "blog/bug-bounty"
 published: yes
 ---
 
-<img class="differentSize30" src="/assets/img/ants.png" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
+<img class="differentSize40" src="/assets/img/fb.png" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
 
 # TL;DR
 
@@ -57,10 +57,16 @@ El `Protocolo de transferencia de hipertexto (HTTP)`, define cómo su navegador 
 Empezaremos viendo un poco técnicamente de lo que se trata cuando accedemos a un sitio web y centrandonos en el protocolo `HTTP`
 
 ---
-* ### **0x01->** Extracción del nombre de dominio
+* ## **0x01»** Extracción del nombre de dominio
 
-Vamos a probar ingresando a la página donde se consultan preguntas de programación: [https://stackoverflow.com] (https://stackoverflow/)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
-* 
+Vamos a probar ingresando a la página donde se consultan preguntas de programación: [https://stackoverflow.com] (Stackoverflow)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
+El dominio sirve como una forma de encontrar la dirección del servidor.
+
+* ## **0x02 »** Resolver una dirección IP
+
+
+
+
 ---
 
 
