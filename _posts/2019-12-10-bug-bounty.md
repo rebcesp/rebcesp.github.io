@@ -66,7 +66,13 @@ El dominio sirve como una forma de encontrar la dirección del servidor.
 
 Al insertar un dominio en el navegador "ese dominio resolvera el dominio por la IP" y cada dominio en Internet debe resolver una dirección IP para funcionar.
 
-Partimos de que existen dos tipos de direcciones IP: `Protcolo de Internet Version 4(Ipv4)` y `Protoclo de Internet Version 6 (Ipv6)`. 
+Partimos de que existen dos tipos de direcciones IP: `Protcolo de Internet Version 4(Ipv4)` y `Protocolo de Internet Version 6 (Ipv6)`. 
+
+Las direcciones Ipv4 están estructuradas de 4 numeros conectados por puntos, y cada número tiene un rango de `0 a 255`.
+Las direcciones Ipv6 es la versión mas nueva del Protocolo de Internet.
+
+<img class="differentSize40" src="https://www.alegsa.com.ar/Imagen/estructura_direccion_ip_v4.svg" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
+
 
 
 
