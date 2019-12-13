@@ -69,10 +69,10 @@ Al insertar un dominio en el navegador "ese dominio resolvera el dominio por la 
 Partimos de que existen dos tipos de direcciones IP: `Protcolo de Internet Version 4(Ipv4)` y `Protocolo de Internet Version 6 (Ipv6)`. 
 
 Las direcciones Ipv4 están estructuradas de 4 numeros conectados por puntos, y cada número tiene un rango de `0 a 255`.
->Ejemplo: 8.8.8.8
+<img class="differentSize40" src="https://i.ytimg.com/vi/izJEQ1b6WM0/maxresdefault.jpg" alt="ipv4" style="margin:auto; display:block;">
 
 Las direcciones Ipv6 es la versión mas nueva del Protocolo de Internet, tiene 128 bits, 16 octetos, hay muchas para el agotamiento de las `direcciones IPv4`.
->Ejemplo: 2001: 4860: 4860 :: 8888
+<img class="differentSize40" src="https://i.ytimg.com/vi/FsieCcOSWn0/maxresdefault.jpg" alt="ipv6" style="margin:auto; display:block;">
 
 Si queremos buscar una dirección IP de un sitio web podemos usar el comando: `dig A www.example.com`  y pasamos el sitio web que queremos bucar.
 
