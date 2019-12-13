@@ -59,7 +59,7 @@ Empezaremos viendo un poco técnicamente de lo que se trata cuando accedemos a u
 ---
 * ## **0x01»** Extracción del nombre de dominio
 
-Vamos a probar ingresando a la página donde se consultan preguntas de programación: [StackOverflow] (https://stackoverflow.com)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
+Vamos a probar ingresando a la página donde se consultan preguntas de programación: [StackOverflow](https://stackoverflow.com)  , hablando con argumentos **stakoverflow** seria el nombre de dominio que estamos intentando visitar y debe cumplir con las reglas específicas definidas por los RFC, por ejemplo un nombre de dominio solo puede contener caracteres alfanúmericos y guiones bajos.
 El dominio sirve como una forma de encontrar la dirección del servidor.
 
 * ## **0x02 »** Resolver una dirección IP
@@ -69,9 +69,17 @@ Al insertar un dominio en el navegador "ese dominio resolvera el dominio por la 
 Partimos de que existen dos tipos de direcciones IP: `Protcolo de Internet Version 4(Ipv4)` y `Protocolo de Internet Version 6 (Ipv6)`. 
 
 Las direcciones Ipv4 están estructuradas de 4 numeros conectados por puntos, y cada número tiene un rango de `0 a 255`.
-Las direcciones Ipv6 es la versión mas nueva del Protocolo de Internet.
+>Ejemplo: 8.8.8.8
 
-<img class="differentSize40" src="https://www.alegsa.com.ar/Imagen/estructura_direccion_ip_v4.svg" alt="antsBUGBOUNTY" style="margin:auto; display:block;">
+Las direcciones Ipv6 es la versión mas nueva del Protocolo de Internet, tiene 128 bits, 16 octetos, hay muchas para el agotamiento de las `direcciones IPv4`.
+>Ejemplo: 2001: 4860: 4860 :: 8888
+
+Si queremos buscar una dirección IP de un sitio web podemos usar el comando: `dig A www.example.com`  y pasamos el sitio web que queremos bucar.
+
+* ## **0x03** Establecer una conexión TCP
+
+
+
 
 
 
