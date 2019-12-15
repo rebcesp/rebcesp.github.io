@@ -78,6 +78,20 @@ Si queremos buscar una dirección IP de un sitio web podemos usar el comando: `d
 
 * ## **0x03** Establecer una conexión TCP
 
+La computadora intentara estabelcer una conexion de Protocolo de Control de Transmision  con la direccion IP en el puerto 80 porque visito un sitio usando `http://` realmente este protocolo ayuda a que las computadoras se comuniquen entre si. TCP proporciona comunicacion bidireccional para que los destinatarios del mensaje puedan verificar la informacion que reciben y no se pierde nada en la transmision.
+
+El servidor al que esta enviando una solicitud podria estar ejecutando multiples servicios. Hay que pensar que un servicio es como un programa de computadora,  por lo tanto se necesita usar `puertos` para identificar procesos especificos para recibir solicitudes.
+
+Por ejemplo el _puerto 80_ es el puerto estandar para enviar y recibir solicitudes HTTP SIN CIFRAR. 
+Otro puerto comun es el _puerto 443_ que se utiliza para solicitudes HTTPS CIFRADAS.
+
+Puedes probarlo usando netcat y estableciendo una conexion TCP a un sitio web en el puerto 80 con el comando `nc <DIRECCION IP>80`
+
+* ## **0x04** Enviando una solicitud HTTP
+
+
+
+
 
 
 
