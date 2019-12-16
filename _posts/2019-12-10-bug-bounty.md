@@ -89,7 +89,29 @@ Puedes probarlo usando netcat y estableciendo una conexion TCP a un sitio web en
 
 * ## **0x04** Enviando una solicitud HTTP
 
+---
+GET / HTTP / 1.1<br> //La solicitud GET solo recupera información
+Host: www.stackoverflow.com<br> //Información adicional que se envía parte de la solicitud
+Conexión: keep-alive<br> //Indica la solicitud de mantener abierta la conexión con el servidor
+Aceptar: application / html, * / *<br> //Acepta formato html y tambien todos 
+User-Agent: Mozilla / 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit / 537.36 (KHTML, como Gecko) Chrome / 72.0.3626.109 Safari / 537.36 //Software responsable de enviar la solicitud
+---
 
+* ## **0x05** Respuesta del servidor
+
+El servidor por su lado deberia responder algo similar a esto:
+`
+ HTTP / 1.1 200 OK
+ Tipo de contenido: text / html
+ <html> 
+  <head> 
+    <title> Google.com </title> 
+  </head> 
+  <body> 
+ - snip -
+  </body> 
+ </ html >
+`
 
 
 
