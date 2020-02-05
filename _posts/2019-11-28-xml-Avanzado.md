@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tratando con el DOM de un XML Avanzado
+title: Accesibilidad Forms(Discapacidad Visual)
 category: XML
 permalink: "blog/xml-Avanzado"
 published: yes
@@ -10,9 +10,7 @@ published: yes
 
 # _0x01 - Introdución_
 
-Una de las cosas interesantes que necesitaba hacer en este gran XML como yo lo llamo `XML - Avanzado` por el hecho que se trata de un XML compuesto que contiene más XML valga la redudancia y scripts en `Javascript` suele ser complejo al parsearlo y trabajar con los Nodos que necesito.
-
-Entonces nos pusimos a diseccionarlo y trabajar con el XML que realmente necesitabamos , el cual era el `Xml-Template`
+Este es un proyecto el cual fue muy ambicioso y me genero muchas ganas poder conseguirlo y terminarlo ya que estaría ayudando a muchas personas con discapacidad visual, se trata de un proyecto que trata los archivos PDF para mejorar la accesibilidad en personas con discapacidad visual valga la redudancia y hacer mas fácil su tarea a la hora de leer formularios y rellenarlos.
 
 
 # _0x02 - Diseccionando_
