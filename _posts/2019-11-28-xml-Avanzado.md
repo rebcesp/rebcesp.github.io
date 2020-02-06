@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Accesibilidad Forms(Discapacidad Visual)
+title: Accesibilidad Forms(Discapacidad Visual) / Visual Disability - Forms Accesibility
 category: XML
 permalink: "blog/xml-Avanzado"
 published: yes
@@ -15,11 +15,22 @@ Este es un proyecto el cual fue muy ambicioso y me genero muchas ganas poder con
 
 # _0x02 - Diseccionando_
 
-Una de las cosas mas difícil en estas ocasiones es diseccionarlo y trabajar justamente con lo que necesito , con las etiquetas de `Tipo Complejo` ya que este XML tiene 2887 líneas !!!
+El objetivo del proyecto era primeramente diseccionar un archivo `XML Compuesto` como he mencionado anteriormente y tratar con los nodos principales, nodos hijos, elementos y atributos, en esta ocasión de la foto necesitaba agregar este bloque de nodos para añadir los `marcadores/etiquetas` la cual sería la funcionalidad accesible para los `"discapacitados"`.
 
 <img class="differenteSize65" src="/assets/img/xmlEtiquetas.png" alt="LineasXml" style="margin:auto; display:block;">
 
-Necesito trabajar con un nodo de etiquetas , específicamente la etiqueta `</draw>` donde aquí dentro integraremos las otras etiquetas de `tipo complejo` , esto va a ser necesario para que cuando el formulario el cual estoy trabajando se visualize en un PDF , cabe decir que son formularios con accesibilidad para personas con discapacidades , volviendo al tema cuando se visualize el formulario al apretar la tecla `TAB` el **setFocus** que es el método que esta en el Backend del formulario programado en Javascript , debería enfocar los campos secuencialmente y gracias a la herramienta [NVDA](https://nvda.es/) qué es un lector de pantalla la persona con la discapacidad de visión debería escuchar los nombres de los campos. 
+Voy a explicar el bloque del nodo de la fotografía.
+
+---
+Extras = Es la etiqueta necesaria que se necesita para crear un marcador en un contenedor válido.
+Text "name" =  Es el nombre del marcador que aparecerá en el panel de marcadores. Si no se especifica, el marcador no se generará
+Text "color" = El color es el que se representará el nombre del marcador. El parámetro de color de indicarse en el esquema RGB. Por ejemplo, para insertar un marcador en color rojo, este parámetro debe especificarse como `255,0,0`. El valor predeterminado para el parámetro de color es `0,0,0,(negro)`.
+Text "style" = El estilo en el que se representa el nombre del marcador.
+Text "action" = La acción que se realiza cuando se hace clic en el marcador. Los valores pueden ser:
+goToPage / setFocus / Execute/
+El que yo utilizo es setFocus que establece en el campo principal en foco, es decir al seleccionar el marcador tabulando se dirige directamente al campo
+---
+
 
 # _0x03 - Picando Código (Java)_
 
