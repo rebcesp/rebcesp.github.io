@@ -31,10 +31,69 @@ goToPage / setFocus / Execute/
 El que yo utilizo es setFocus que establece en el campo principal en foco, es decir al seleccionar el marcador tabulando se dirige directamente al campo
 ---
 
+# _0x03 - Explicación breve del código_
 
-# _0x03 - Picando Código (Java)_
+Al principio de empezar la lógica con el código investigue acerca de trabajar con el `DOM` del XML y poder seleccionar los nodos necesarios los cuales necesitaba tratar, hay muchas formas de poder hacerlo y empeze con el método 
 
-Ya que sabemos con los nodos que trabajaremos, empezaremos a programar en Java para tratarlos y poder hacer nuestra tarea, Java es un lenguaje muy robusto, tiene muchas librerías que nos permitirá profundizar en nuestro fichero.
+```java
+NodeList nListField = doc.getElementsByTagName("field");
+NodeList nListDraw = doc.getElementsByTagName("draw");
+```
+Estas son las etiquetas que necesito tratar y añadir el bloque de `<extras> que seran mis marcadores`. Lo que buscamos en esto es añadir el bloque repetidas veces en todos los nodos que encuentre con los nombres `field`  y `draw` como también filtrando por `atributos` los que no necesito. 
+
+Luego de usar estos métodos tuve problemas para extraer textos de elementos que necesitaba tratar, por ejemplo en mi archivo `XML` tengo una etiqueta llamada `<p></p>` que esta dentro de nodos, y lo que quería conseguir era capturar el texto sin el ultimo carácter y dejarlo en limpio. Dejaré un ejemplo y continuaré explicando para que necesito el texto en "limpio" sin el último caracter que en esta ocasión es un guión bajo `_`.
+
+```xml
+<body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
+    <p style="letter-spacing:0in">Nombre<span style="color:#ff0000">_</span></p>
+</body>
+```
+Lo que necesitamos aqui es el "Nombre" y capturar esto en una variable para luego poder copiar todos los textos que esten dentro de `<p>/</p>` en nuestra etiqueta `text=name` automáticamente e ir generando nuestros marcadores secuencialmente.
+
+Para conseguir esto tuve problemas con el método de arriba, ya que en el formulario muchas veces tenemos cajas de `CheckBox y ComboBox` y esto no me capturaba.
+
+El código que usaba era un bucle y recorría solo las etiquetas draw y field seleccionado el texto dentro de las etiquetas `<p></p>
+` y guardando en una variable excluyendo el último caracter:
+
+```java
+for (int temp = 0; temp < nList.getLength(); temp++) {
+
+	Node nNode = nList.item(temp);
+
+	for (int temp1 = 0; temp1 < nListBody.getLength(); temp1++) {
+
+		Node Nbody = nListBody.item(temp);
+		// System.out.println(Nbody.getTextContent());
+
+		if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+			Element eElement = (Element) Nbody;
+			String cadenaNuevaField = "";
+			//\u0000 es para que la variable este vacía.
+			char TextoCampoText = '\u0000';
+			String nFieldTextContent = "";
+
+			if (eElement != null) {
+			
+				nFieldTextContent = eElement.getTextContent() != null ? eElement.getTextContent().trim(): "";
+						}
+					if (nFieldTextContent.length() > 0) {
+						TextoCampoText = nFieldTextContent.charAt(nFieldTextContent.length() - 1);
+					}
+
+					if (TextoCampoText == '_') {
+						CadenaNuevaField = nFieldTextContent.substring(0, nFieldTextContent.length() - 1);
+					}
+
+					System.out.println("Cadena sin barra: " + cadenaNuevaField);
+```
+
+Al imprimir la variable `cadenaNuevaField` tenía problemas para obtener todos lo que necesitaba y opte por trabajar con `xPATH`, esto es muy poderoso ya que permite dirigirnos por consultas directamente donde necesitamos llegar, Ejemplo:
+
+```xml
+/subform/subform/subform/subform/subform/field/caption/value/exData/child::*[local-name() = 'body' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/child::*[local-name() = 'p' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/text()"
+```
+
 
 ## Este código ire explicando paso a paso que es lo que he hecho.
 
