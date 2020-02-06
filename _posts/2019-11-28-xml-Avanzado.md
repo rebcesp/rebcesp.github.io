@@ -22,13 +22,13 @@ El objetivo del proyecto era primeramente diseccionar un archivo `XML Compuesto`
 Voy a explicar el bloque del nodo de la fotografía.
 
 ---
-Extras = Es la etiqueta necesaria que se necesita para crear un marcador en un contenedor válido.
-Text "name" =  Es el nombre del marcador que aparecerá en el panel de marcadores. Si no se especifica, el marcador no se generará
-Text "color" = El color es el que se representará el nombre del marcador. El parámetro de color de indicarse en el esquema RGB. Por ejemplo, para insertar un marcador en color rojo, este parámetro debe especificarse como `255,0,0`. El valor predeterminado para el parámetro de color es `0,0,0,(negro)`.
-Text "style" = El estilo en el que se representa el nombre del marcador.
-Text "action" = La acción que se realiza cuando se hace clic en el marcador. Los valores pueden ser:
+* Extras = Es la etiqueta necesaria que se necesita para crear un marcador en un contenedor válido.
+* Text "name" =  Es el nombre del marcador que aparecerá en el panel de marcadores. Si no se especifica, el marcador no se generará
+* Text "color" = El color es el que se representará el nombre del marcador. El parámetro de color de indicarse en el esquema RGB. Por ejemplo, para insertar un marcador en color rojo, este parámetro debe especificarse como `255,0,0`. El valor predeterminado para el parámetro de color es `0,0,0,(negro)`.
+* Text "style" = El estilo en el que se representa el nombre del marcador.
+* Text "action" = La acción que se realiza cuando se hace clic en el marcador. Los valores pueden ser:
 goToPage / setFocus / Execute/
-El que yo utilizo es setFocus que establece en el campo principal en foco, es decir al seleccionar el marcador tabulando se dirige directamente al campo
+* El que yo utilizo es setFocus que establece en el campo principal en foco, es decir al seleccionar el marcador tabulando se dirige directamente al campo
 ---
 
 # _0x03 - Explicación breve del código_
@@ -93,6 +93,9 @@ Al imprimir la variable `cadenaNuevaField` tenía problemas para obtener todos l
 ```xml
 /subform/subform/subform/subform/subform/field/caption/value/exData/child::*[local-name() = 'body' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/child::*[local-name() = 'p' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/text()"
 ```
+Esto me imprime lo que necesito:
+ _**Output**_
+
 
 
 ## Este código ire explicando paso a paso que es lo que he hecho.
