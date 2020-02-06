@@ -17,7 +17,7 @@ Este es un proyecto el cual fue muy ambicioso y me genero muchas ganas poder con
 
 El objetivo del proyecto era primeramente diseccionar un archivo `XML Compuesto` como he mencionado anteriormente y tratar con los nodos principales, nodos hijos, elementos y atributos, en esta ocasión de la foto necesitaba agregar este bloque de nodos para añadir los `marcadores/etiquetas` la cual sería la funcionalidad accesible para los `"discapacitados"`.
 
-<img class="differenteSize65" src="/assets/img/xmlEtiquetas.png" alt="LineasXml" style="margin:auto; display:block;">
+<img class="differenteSize65" src="/assets/img/extras.png" alt="LineasXml" style="margin:auto; display:block;">
 
 Voy a explicar el bloque del nodo de la fotografía.
 
