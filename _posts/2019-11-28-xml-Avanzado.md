@@ -93,6 +93,10 @@ Al imprimir la variable `cadenaNuevaField` tenía problemas para obtener todos l
 ```xml
 /subform/subform/subform/subform/subform/field/caption/value/exData/child::*[local-name() = 'body' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/child::*[local-name() = 'p' and namespace-uri() = 'http://www.w3.org/1999/xhtml']/text()"
 ```
+Antes de mostrar el _output_ , en esta consulta `xPath` de arriba no tiene que ser siempre `explícito` , podemos conseguir un objetivo que nos imprima haciendo un bucle y recorriendo el archivo xml asignando los elementos donde queremos llegar o con una consulta ya sea compleja o simple.
+
+Algo para añadir importante, el archivo `XML` al ser compuesto tiene una cabecera rebuscada que no permite facilmente hacer consultas `xPATH`, es necesario borrar porción de etiquetas de la parte superior y abajo en sus etiquetas de cierre.
+
 Esto me imprime lo que necesito:
  _**Output**_
 
