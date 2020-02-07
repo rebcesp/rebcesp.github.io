@@ -43,7 +43,7 @@ class Juego{
 
 ```
 En el anterior código hay un error que es comparar `dos String` con operadores `==`, esto en Java no funciona, los operadores `==` se usa para: _Integer,Char,Object_.
-Lo mejor que se puede usar en vez de `if(intento==miNombre){` es --> `if(equals.miNombre(rebcesp))`
+Lo mejor que se puede usar en vez de `if(intento==miNombre){` es --> `if(miNombre.equals("rebcesp")))`
 
 **Output**
 _Adivina el nombre:_
