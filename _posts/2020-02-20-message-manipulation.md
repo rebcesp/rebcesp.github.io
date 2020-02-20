@@ -16,7 +16,7 @@ Comenzamos entrando a `WhatsAppWeb`, seleccionamos algun chat aleotario donde te
 
 Una vez estamos ahi vamos a buscar la función `Promise.callSynchronously(function ()`
 
-# ¿Qué hace esta función?
+## ¿Qué hace esta función?
 
 Esta función es `asincróna` lo que hace es escribir un código basado en promesas como si fuere sincrónico, pero sin bloquear el hilo principal. Es decir hacen a tu código menos "inteligente" y más legible. 
 
@@ -34,4 +34,6 @@ async function myFirstAsyncFunction() {
 ```
 Dejare el link de referencia al final del post, para que lo puedas leer mas detallademente como funciona, sigamos.
 
+# Breakpoint
 
+Luego que estamos en la línea de la función `Promise.callSynchronously(function ()`
