@@ -16,4 +16,11 @@ Un programa bien escrito debe ser:
 * Robusto
 * Reutilizable
 
+*Métodos en java* son módulos de código(funciones,procedimientos,rutinas)que se pueden tratar individualmente.
+
+**Un programa normalmente esta formado por varios métodos**
+
+**Ventanas**
+
+* Abstracción: 
 
