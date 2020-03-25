@@ -8,8 +8,22 @@ published: yes
 
 # Aprende a escribir código de calidad
 
-Existen muchos patrones de diseño al desarrollar un software/aplicación, fundamentos a tomar en cuenta al empezar, metodologías de desarrollo. En este post te enseñare a construir mejores aplicaciones/programas donde aprenderás a escribir código que consista en ser: claro, ágil. preciso, y mantenible.
-
+Existen muchos patrones de diseño al desarrollar un software/aplicación, fundamentos a tomar en cuenta al empezar, metodologías de desarrollo. El objetivo de este post es construir mejores aplicaciones teniendo en cuenta una: Claridad, Agilidad, Precisión, Mantenibilidad en tu `código`, entre todo eso más flexible.
 
 # POO / Programación Orientada a Objetos
+
+Algunos de los temas que explicaré y aplica a la Programación orientada a objetos son los siguientes:
+
+* Abstracción
+* Poliformismo
+* Herencia
+* Encapsulación
+* Composición
+* Asociación
+* Agregamiento
+* Constructores
+* Destructores
+* Singleton
+* Chain-Of-Responsability
+* Class-Responsability-Collaboration
 
