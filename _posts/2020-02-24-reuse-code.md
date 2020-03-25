@@ -1,26 +1,15 @@
 ---
 layout: post
-title: Reutilización código / Paradigmas
-category: code,java,reuse
+title: Paradigmas de programación
+category: code,java,reuse,patron,paradigmas
 permalink: "blog/reuse-code"
 published: yes
 ---
 
-# Reutilización del código
+# Aprende a escribir código de calidad
 
-Hay varios criterios que se deben cumplir cuando se escribe un programa.
-Un programa bien escrito debe ser:
+Existen muchos patrones de diseño al desarrollar un software/aplicación, fundamentos a tomar en cuenta al empezar, metodologías de desarrollo. En este post te enseñare a construir mejores aplicaciones/programas donde aprenderás a escribir código que consista en ser: claro, ágil. preciso, y mantenible.
 
-* Compacto
-* Legible
-* Robusto
-* Reutilizable
 
-*Métodos en java* son módulos de código(funciones,procedimientos,rutinas)que se pueden tratar individualmente.
-
-**Un programa normalmente esta formado por varios métodos**
-
-**Ventanas**
-
-* Abstracción: 
+# POO / Programación Orientada a Objetos
 
