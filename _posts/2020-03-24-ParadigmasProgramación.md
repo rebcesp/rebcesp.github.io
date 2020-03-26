@@ -57,9 +57,9 @@ Sin apagamos una `lámpara`, esto no quiere decir que se apaguen todas las lampa
 
 ### Tomar en cuenta para aplicar a la programación y lo que define un OBJETO.
 
-* ENTIDAD 
-* ATRIBUTOS / DATOS / PROPIEDADES 
-* COMPORTAMIENTOS / MÉTODOS
+* Entidad
+* Atributos
+* Comportamientos
 
 ## Ejemplo de Objetos 
 ```
@@ -84,6 +84,37 @@ diseñar()
 
 Podemos ver claramente que cada uno de los ejemplos de los objetos tienen sus porpias propiedades como `nombre` y `género` y métodos como `programar()` y `diseñar`.
 
+> Los objetos no son siempre elementos físicos
+> Los objetos no son siempre elementos visibles
+
+## ¿Qué es una clase?
+
+Los objetos y las clasdes van `de la mano`, no se puede hablar de uno sin hablar del otro. El punto principal en diseño `orientado a objetos no son los objetos` son las `clases`, porque usamos clases para crear objetos.
+
+> Una clase describe como será un objeto(pero no es el objeto en sí mismo).
+
+### Ejemplo de una clase
+
+Una facil ejemplo para explicar lo que es una clase podemos decir, __Un plano de una casa es una CLASE__, `¿Por qué?`.
+
+* _Clase_: El plano(Describiremos como será cada elemento de la casa)
+
+Una vez que tenemos el plano de la casa, usaremos esto para construir la casa, por lo cual sera el Objeto.
+
+* _Objeto_: La casa
+* _Una Clase_: Puede tener múltiples Objetos
+
+### Cuando creas una clase puede tener:
+
+Nombre o tipo: __Lo que es...__, por ejemplo:
+_(Empleado, cuentadelBanco, Evento, Jugador, Documento, Persona)_
+
+Atributos, Propiedades o datos: __Lo que describe...__
+_(Saldo, Altura, Puntuación, tipoDeArchivo, Longitud)_
+
+Comportamientos o métodos: __Lo que se puede hacer o se puede hacer__
+_(Programar(), Abrir(), Buscar(), Guardar(), Imprimir(), Crear(), Diseñar())_
+<hr class="codebreak"> 
 
 
 
