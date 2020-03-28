@@ -33,7 +33,7 @@ Muchas de las veces que nosotros escuchamos o veos este título `"Orientado a ob
 * Planificar nuestra solución
 * Construir nuestra pieza de software para impelementar nuestra solución
 
-Antes de empezar a programar no podemos saltarnos pasos `primordiales` como son el análisis y diseó de nuestro programa y aplicación, esto nos ayudará a comprender y planificar muchisimo mejor nuestra pieza de software que implementaremos.
+Antes de empezar a programar no podemos saltarnos pasos `primordiales` como son el análisis y diseñó de nuestro programa y aplicación, esto nos ayudará a comprender y planificar muchisimo mejor nuestra pieza de software que implementaremos.
 
 ## ¿Qué es un objeto?
 
@@ -56,6 +56,7 @@ Los objetos tienen: características, propiedades inherentes que los describen.
 Sin apagamos una `lámpara`, esto no quiere decir que se apaguen todas las lamparas del resto del mundo.
 
 ### Tomar en cuenta para aplicar a la programación y lo que define un OBJETO.
+
 
 * Entidad
 * Atributos
@@ -93,7 +94,7 @@ Los objetos y las clasdes van `de la mano`, no se puede hablar de uno sin hablar
 
 > Una clase describe como será un objeto(pero no es el objeto en sí mismo).
 
-### Ejemplo de una clase
+## Ejemplo de una clase
 
 Una facil ejemplo para explicar lo que es una clase podemos decir, __Un plano de una casa es una CLASE__, `¿Por qué?`.
 
@@ -104,7 +105,7 @@ Una vez que tenemos el plano de la casa, usaremos esto para construir la casa, p
 * _Objeto_: La casa
 * _Una Clase_: Puede tener múltiples Objetos
 
-### Cuando creas una clase puede tener:
+## Cuando creas una clase puede tener:
 
 Nombre o tipo: __Lo que es...__, por ejemplo:
 _(Empleado, cuentadelBanco, Evento, Jugador, Documento, Persona)_
@@ -115,6 +116,72 @@ _(Saldo, Altura, Puntuación, tipoDeArchivo, Longitud)_
 Comportamientos o métodos: __Lo que se puede hacer o se puede hacer__
 _(Programar(), Abrir(), Buscar(), Guardar(), Imprimir(), Crear(), Diseñar())_
 <hr class="codebreak"> 
+
+## Creando una clase para cuentas Bancarias(Ejemplo)
+
+```
+Nombre o tipo: Cuenta Bancaria
+Atributos: NumeroCuenta, balance, FechaApertura, TipoCuenta
+Comportamiento o métodos: abrir(), cerrar(), depositar(); retirar(),
+```
+
+Para entender esto más facil es haciendolo como diagramas, es decir así:
+
+## Clase
+
+```
+CuentaBancaria
+---------------
+numeroCuenta
+balance
+fechaApertura
+tipoCuenta
+---------------
+abrir()
+cerrar()
+depositar()
+retirar()
+```
+
+## Objeto + Instancia
+
+Cada objeto como podemos ver tiene su propia identidad, sus propiedades y cada comportamiento o método es independiente.
+
+
+
+```
+rebcespCuentaBancaria
+scriptKidieCuentaBancaria
+--------------------------
+A82723
+B82374
+
+10000000000$us
+10$us
+
+10/02/2008
+24/06/2020
+
+TarjetaCredito
+TarjetaDébito
+----------------------------
+abrir() - abrir()
+cerrar() - cerrar()
+depositar() - depositar()
+retirar() - retirar()
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
