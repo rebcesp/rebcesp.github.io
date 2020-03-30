@@ -171,7 +171,17 @@ depositar() - depositar()
 retirar() - retirar()
 ```
 
+# Abstracción
+## Centrate en lo esencial
 
+FOTO
+
+Vamos a poner un ejemplo:
+Si yo digo mesa, tu ya sabes que quiero decir, aunque no he especificado que tipo de mesa me estoy refiriendo, no he dicho si es una mesa de madera, de metal o de vidrio, tampoco si tiene cuatro patas o si es una mesa rectangular o redonda.
+
+`Abstracción significa que nos centramos en las propiedades generales`, más que en un ejemplo concreto, abstracción significa valga la redundancia lo que no es importante o lo que no es irrelevante.
+
+También abastracción significa
 
 
 
