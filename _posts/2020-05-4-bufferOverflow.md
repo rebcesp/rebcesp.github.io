@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Buffer Overflow desde Cero
+title: Buffer Overflow desde Zero
 category: exploit,c,b0f,linux
 permalink: "blog/b0f"
 published: yes
