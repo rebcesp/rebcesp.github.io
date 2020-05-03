@@ -8,7 +8,7 @@ published: yes
 
 # Introducción
 
-<img class="differentSize30" src="https://cdn.pixabay.com/photo/2016/04/26/16/58/coffe-1354786__340.jpg" alt="Foto1" style="margin:auto; display:block;">
+<img class="differentSize70" src="https://cdn.pixabay.com/photo/2016/04/26/16/58/coffe-1354786__340.jpg" alt="Foto1" style="margin:auto; display:block;">
 
 ## Evolución de la computación y de la programación
 
