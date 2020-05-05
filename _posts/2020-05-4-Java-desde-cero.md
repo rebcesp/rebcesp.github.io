@@ -29,6 +29,10 @@ Las  computadoras estan compuestas por diversos dispositivos, (teclado,ratón,mo
 
 No nos centraremos en cada unidad, pero dejare  como refencia para que puedan leer que es cada una  de ellas: https://rusmery22.wordpress.com/2013/11/25/funcionamiento-logica-y-estructura-de-una-computadora/
 
+## Sistemas  Operativos
+
+Las primeras computadoras eran capaces de realizar solamente una `tarea` o `trabajo a  la vez`. A esto se le conoce como `procesamiento de lotes (batch)` de un solo usuario. Esto se interpreta en que la computadora ejecuta un solo programa a la vez, mientras procesa los datos en grupo o lotes.
+
 
 
 
