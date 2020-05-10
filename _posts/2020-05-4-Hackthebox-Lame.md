@@ -25,3 +25,15 @@ rtt min/avg/max/mdev = 38.732/38.732/38.732/0.000 ms
 Podemos ver que el ttl=63 pertenece a una máquina linux, podemos guiarnos a través de esta  tabla:
 
 <img class="differentSize70" src="/assets/img/ttlTabla.png" alt="Foto1" style="margin:auto; display:block;">
+
+Vamos a proceder a enumerar los puertos `TCP`, utilizando la siguiente sintaxis de nmap:
+`nmap -p- -sS --min-rate 5000 --open -T5 -vvv -Pn -n 10.10.10.3`
+
+```console
+PORT     STATE SERVICE      REASON
+21/tcp   open  ftp          syn-ack ttl 63
+22/tcp   open  ssh          syn-ack ttl 63
+139/tcp  open  netbios-ssn  syn-ack ttl 63
+445/tcp  open  microsoft-ds syn-ack ttl 63
+3632/tcp open  distccd      syn-ack ttl 63
+```
