@@ -38,14 +38,9 @@ PORT     STATE SERVICE      REASON
 3632/tcp open  distccd      syn-ack ttl 63
 ```
 
-Ya que tenemos los puertos, vamos a buscar las versiones de cada uno de ellos y analizarlos para ver si alguno es explotable.
+Ya que tenemos los puertos, vamos a buscar las versiones de cada uno de ellos y analizarlos para ver si alguno es explotable, lo guardaremos en formato nmap con el parametro -oN targeted para después trabajar con expresiones regulares.
 
-```{r, engine='sh', count_lines}
-wc -l en_US.Twitter.txt 
-```
-
-
-`nmap -sC -sV -p21,22,139,445,3632`
+`nmap -sC -sV -p21,22,139,445,3632 -oN targeted` 
 
 ```console
 PORT     STATE SERVICE     VERSION
@@ -87,5 +82,38 @@ Host script results:
 |   challenge_response: supported
 |_  message_signing: disabled (dangerous, but default)
 |_smb2-time: Protocol negotiation failed (SMB2)
-
 ```
+## Expresión regular -oN targetd
+
+```console
+root@rebcesp:/home/rebcesp/htb/Lame/nmap# cat targeted | grep -oP '\d{1,5}/tcp.*'
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+3632/tcp open  distccd     distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+```
+
+
+
+Intentaremos acceder por el protocolo FTP que se encuentra en el puerto 21, y nos detalla que el acceso al login es `Anonymous`, esto significa que no requiere de contraseña, pero al acceder no encontramos ningun directorio es decir esta `vacío`, entonces lo descartamos y continuamos analizando los siguientes puertos.
+
+EL comando utilizado sería este
+
+```console
+root@rebcesp:/home/rebcesp/htb/Lame/nmap# ftp 10.10.10.3 
+Connected to 10.10.10.3.
+220 (vsFTPd 2.3.4)
+Name (10.10.10.3:rebcesp): anonymous
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> dir
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+226 Directory send OK.
+```
+
+
