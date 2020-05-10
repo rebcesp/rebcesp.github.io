@@ -22,3 +22,6 @@ PING 10.10.10.3 (10.10.10.3) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 38.732/38.732/38.732/0.000 ms
 ```
+Podemos ver que el ttl=63 pertenece a una máquina linux, podemos guiarnos a través de esta  tabla:
+
+<img class="differentSize70" src="/assets/img/ttlTabla.png" alt="Foto1" style="margin:auto; display:block;">
