@@ -13,7 +13,7 @@ Este post de la máquina Lame sera una intrusión utilizando metasploit y `sin m
 
 Primeramente  tenemos que  comprobar que la máquina este activa y para esto lanzaremos un ping a a  la máquina `ping -c 10.10.10.3`.
 
-```console
+```zh
 root@rebcesp:/home/rebcesp/htb# ping -c 1 10.10.10.3
 PING 10.10.10.3 (10.10.10.3) 56(84) bytes of data.
 64 bytes from 10.10.10.3: icmp_seq=1 ttl=63 time=38.7 ms
