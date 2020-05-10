@@ -222,6 +222,11 @@ daemon@lame:/$ which nmap | xargs ls -l
 ```
 Esto quiere decir que a nivel de sistema cualquier usuario puede ejecutar este binario de forma temporal como el usuario root, esto significa que podremos tener una reverse shell a la hora de ejecutarlo. Esto se podría hacer con el modo interactivo de nmap.
 
+Procedemos a  escribir: nmap --interactive
+!sh
+root;)
+
+
 
 
 
