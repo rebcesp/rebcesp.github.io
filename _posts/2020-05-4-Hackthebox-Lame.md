@@ -40,6 +40,11 @@ PORT     STATE SERVICE      REASON
 
 Ya que tenemos los puertos, vamos a buscar las versiones de cada uno de ellos y analizarlos para ver si alguno es explotable.
 
+```{r, engine='sh', count_lines}
+wc -l en_US.Twitter.txt 
+```
+
+
 `nmap -sC -sV -p21,22,139,445,3632`
 
 ```console
