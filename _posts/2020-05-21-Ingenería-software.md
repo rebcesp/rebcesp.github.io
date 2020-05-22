@@ -6,13 +6,11 @@ permalink: "blog/software"
 published: yes
 ---
 
-# Cómo funcionan las computadoras y los teléfonos?
+# IngSoftware
 
-Supongamos que tenemos el ejemplo de  enviar un correo desde una laptop a una persona que tiene un teléfono. El proceso común que todos conocemos, sería
-`Mail->Internet->Teléfono`, pero si entramos en profundidad el proceso sería otro:
+Este post no será mas que algunas notas gráficas  para ilustrarme y entender mejor la carrera  de Ingenería de Sofware, todos los gráficos han sido desarrollado por mi. Incluiré la explicación debajo de todos las imágenes.
 
+<img class="differentSize70" src="/assets/img/Untitled Diagram.png" alt="Foto1" style="margin:auto; display:block;">
 
-Yo tengo mi laptop, envio un correo a un destinatario, y apreto `enter` para  enviarlo, pues desde que se apreta la tecla de ENTER empieza el proceso, la tecla envía
-una `señal electrica` a la `TARJETA MADRE`, en este proceso es intervenido por el CPU, mejor conocido como Unidad Central de Procesamiento, luego el CPU envía esta señal a una capa mas arriba que seria el `Sistema Operativo`, en este caso por ejemplo Windows. Windows al tener Drivers puede entender que la `señal eléctrica` ha sido presionada por un teclado ya que los Drivers ayudan a comunicar el hardware con el software.
 
 
