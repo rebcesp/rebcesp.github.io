@@ -22,7 +22,11 @@ Los servicios onion ofrecen algunas ventajas:
 
 Para poder acceder se necesitará saber la dirección del servicio onion para conectarse. Una dirección onion es una cadena de 16 caracteres formado en su mayoría por letras y números aleatorios, seguidos de la extensión `.onion`
 
-Para poder acceder podemos hacerlo desde el navegador oficial que es el `Tor Browser` o desde el navegador de `Brave` con la opcion `New private whit Tor`.
+Si queremos visualizar nuestro servicio .onion podemos hacerlo desde el navegador oficial que es el `Tor Browser` o desde el navegador de `Brave` con la opcion `New private whit Tor`. Ahora también lo puedes hacer descargando la aplicación de `Tor` para teléfonos móviles.
+
+## Como funciona el servicio onion en la red TOR
+
+
 
 
 
