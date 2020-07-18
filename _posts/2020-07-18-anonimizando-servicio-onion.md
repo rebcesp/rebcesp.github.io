@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Esteroides en un servicio onion sobre un VPS #1
+title: Esteroides en un servicio [.onion] sobre un VPS #1
 category: onion,tor,anonimato
 permalink: "blog/roidsonion"
 published: yes
@@ -8,7 +8,7 @@ published: yes
 
 Voy a escribir una serie de posts sobre el securizado y anonimato(`con esteroides`) a la hora de levantar un servicio onion y aplicar reglas fundamentales como también conocer los conceptos de lo que vamos haciendo, espero que lo disfruten.
 
-# ¿Qué es un servicio Onion?
+# ¿Qué es un servicio [.onion]?
 
 Los servicios `onion` , anteriormente conocidos como servicios ocultos son servicios como cualquier sitio web con la diferencia que solo se puede acceder a través de la red `TOR`.
 
