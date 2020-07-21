@@ -8,19 +8,13 @@ published: yes
 
 <img class="differentSize50" src="/assets/img/torlogo.png" alt="Foto1" style="margin:auto; display:block;">
 
+<details>
+  <summary>Resumen</summary>
 
-<p>[spoiler]</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Podemos</span> <span class="n">usar</span> <span class="o">[</span><span class="n">spoiler</span><span class="o">]</span> <span class="n">y</span> <span class="o">[/</span><span class="n">spoiler</span><span class="o">]</span> <span class="n">para</span> <span class="n">ocultar</span> <span class="n">contenido</span>
-</code></pre></div></div>
-
-<p>[/spoiler]</p>
-
-
-
-[spoiler]
-Voy a escribir una serie de posts sobre el securizado y anonimato(`con esteroides`) a la hora de levantar un servicio onion y aplicar reglas fundamentales como también conocer los conceptos de lo que vamos haciendo, espero que lo disfruten.
-[\spoiler]
+  ```
+  Voy a escribir una serie de posts sobre el securizado y anonimato(`con esteroides`) a la hora de levantar un servicio onion y aplicar reglas fundamentales como también conocer   los conceptos de lo que vamos haciendo, espero que lo disfruten.
+  ```
+</details>
 
 # ¿Qué es un servicio [.onion]?
 
