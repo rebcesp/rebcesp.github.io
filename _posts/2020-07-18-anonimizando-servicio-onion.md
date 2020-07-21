@@ -6,7 +6,7 @@ permalink: "blog/roidsonion"
 published: yes
 ---
 
-<img class="differentSize50" src="/assets/img/torlogo.png" alt="Foto1" style="margin:auto; display:block;">
+<img class="differentSize30" src="/assets/img/torlogo.png" alt="Foto1" style="margin:auto; display:block;">
 
 <details>
   <summary>Resumen</summary>
@@ -36,4 +36,19 @@ Si queremos visualizar nuestro servicio .onion podemos hacerlo desde el navegado
 
 Primero hablaremos sobre los conceptos de que es un servicio onion oculto y como funciona. Un servicio oculto es un servicio que anuncia su existencia en la red `TOR` antes de que los clientes puedan comunicarse con él.
 
-Para iniciar un servicio oculto, se registra un servicio generando un `descriptor` del servicio. Este descriptor contiene la clave pública del servicio y los nodos desde donde hay un circuito de conexión
+Para iniciar un servicio oculto, se registra un servicio generando un `descriptor` del servicio. Este descriptor contiene la clave pública del servicio y los nodos desde donde hay un circuito de conexión (Introduction Point). Estos se anuncian en base de datos distribuidas que almacenan tablas de descriptores
+
+<img class="differentSize50" src="https://www.error509.com/wp-content/uploads/2017/12/122817_0743_TORPrimeros1.png" alt="Foto1" style="margin:auto; display:block;">
+
+Una vez que esta publicado el servicio oculto `(Hidden service)`, el cliente solicita el descriptor a la base de datos para conocer la clave pública del servicio y el punto de introducción con el que comunicar para acordar una conexión. Se envía un mensaje al punto de introducción, proponiendo al servicio un tercer nodo que actúe de relay `(Rendevous Point)` entre ambos. Además, se envía una cookie que actuará de clave temporal en la comunicación.
+
+
+<img class="differentSize50" src="https://www.error509.com/wp-content/uploads/2017/12/122817_0743_TORPrimeros2.png" alt="Foto1" style="margin:auto; display:block;">
+
+Ahora en este punto, la conexión entre ambos se realiza utilizando un punto de encuentro intermedio mediante un circuito en la red `Tor`, por tanto, la comunicación entre el servicio y el cliente es totalmente anónima. El punto de encuentro se encarga de repartir y reenviar los mensajes cifrados que han intercambiar cliente y servicio para mantener una comunicación.
+
+De esta forma la conexión entre las partes está establecida y ninguna de las dos partes conocen la ubicación de la otra.
+
+<img class="differentSize50" src="https://www.error509.com/wp-content/uploads/2017/12/122817_0743_TORPrimeros3.png" alt="Foto1" style="margin:auto; display:block;">
+
+Hasta aquí dejo la primera parte, la segunda ya se pondra manos a la práctica levantando un servicio `[.onion]` mediante nuestro VPS que compraremos con BTC utlizando una VPN.
