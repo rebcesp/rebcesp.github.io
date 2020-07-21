@@ -11,9 +11,9 @@ published: yes
 <details>
   <summary>Resumen</summary>
 
-  ```
+  
   Voy a escribir una serie de posts sobre el securizado y anonimato(`con esteroides`) a la hora de levantar un servicio onion y aplicar reglas fundamentales como también conocer   los conceptos de lo que vamos haciendo, espero que lo disfruten.
-  ```
+  
 </details>
 
 # ¿Qué es un servicio [.onion]?
