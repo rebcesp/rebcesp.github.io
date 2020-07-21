@@ -8,7 +8,9 @@ published: yes
 
 <img class="differentSize50" src="/assets/img/torlogo.png" alt="Foto1" style="margin:auto; display:block;">
 
+[spoiler]
 Voy a escribir una serie de posts sobre el securizado y anonimato(`con esteroides`) a la hora de levantar un servicio onion y aplicar reglas fundamentales como también conocer los conceptos de lo que vamos haciendo, espero que lo disfruten.
+[\spoiler]
 
 # ¿Qué es un servicio [.onion]?
 
