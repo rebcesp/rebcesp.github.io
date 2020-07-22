@@ -6,7 +6,14 @@ permalink: "blog/roidsonion"
 published: yes
 ---
 
+
+
 <img class="differentSize30" src="/assets/img/torlogo.png" alt="Foto1" style="margin:auto; display:block;">
+
+---
+DISCLAIMER
+---
+El post esta hecho por mera curiosidad y de forma educacional, no incentivo a nadie el `CIBERCRIMEN` ni aconsejo hacerlo.
 
 <details>
   <summary>Resumen</summary>
