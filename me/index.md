@@ -2,7 +2,7 @@
 layout: about
 ---
 
-Trabajo actualmente como desollador, he desarollado aplicaciones en diferentes lenguajes, C#, Java, Javascript, Python, VBNet, Groovy. Apasionado por la seguridad informática y siempre con la motivación y las ganas de aprender nuevas cosas y lograr todo lo que me proponga. feliz h4ck1ng.
+26 años, apasionado por la seguridad informática y el aprendizaje de las nuevas tecnologías. Espero que te guste el blog
 
 rebcesp.
 
