@@ -346,12 +346,14 @@ img.differentSize90 {
 			background: $color-grey;
 		}
 		.highlight {
+			
+			font-family: "Dosis";
 			margin: 10px;
 			margin-bottom: 15px;
 			padding: 10px;
 			line-height: 1.5;
 			border-radius: 3px;
-			background: $color-black;
+			background: #111010;
 			overflow-x: auto;
     		overflow-y: hidden;
 			code {
