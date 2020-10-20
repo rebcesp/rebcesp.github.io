@@ -5,7 +5,7 @@ $color-grey: #4f4f4f;
 $color-link: #0174DF;
 $color-code: #04B4AE;
 $color-twitter: #ffffff;
-$color-background: #1C1C1C;
+$color-background: #000;
 $color-hire-white: #FEFEFE;
 $color-hire-black: #272727;
 $color-hire-green: #B6EFD4;
@@ -13,6 +13,10 @@ $color-hire-blue: #A0CCDA;
 $color-hire-shadow: rgba(0, 0, 0, 0.2);
 
 // FONT
+$font-url: "https://fonts.googleapis.com/css2?family=Unica+One&display=swap";
+$font-family: "'Unica One',";
+$font-url: "https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap";
+$font-family: "'Dosis', ";
 $font-url: "https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic";
 $font-family: "'Ubuntu Mono', ";
 
