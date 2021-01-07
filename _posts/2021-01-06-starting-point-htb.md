@@ -13,7 +13,7 @@ Bueno todos sabemos que HackTheBox es una plataforma ahora mismo muy pulida para
 
 Antes de nada es muy necesario contar con la conexión VPN para poder empezar a analizar las máquinas normalmente el archivo se descarga desde la misma web y tiene un aspecto mas o menos asi: `rebcesp-startingpoint.ovpn`, nos conectamos mediante la terminal con los comandos:
 
-```bash
+```lua
 openvpn rebcesp-startingpoint.ovpn
 ...
 2021-01-07 23:22:18 Incoming Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
@@ -26,7 +26,7 @@ openvpn rebcesp-startingpoint.ovpn
 
 HTB nos proporciona una IP para empezar a hackear que en esta ocasión es `10.10.10.27`, lo primero que tenemos que hacer es el reconocimiento de esta máquina es decir, listar sus puertos abiertos junto a los servicios que estan corriendo en cada uno de ellos, para eso se utiliza una herramienta que es `navaja suiza` llamada `Nmap` lo cual es `escaner de puertos MUY potente`. Vamos a usar los parámetros de nmap para poder enumerar los puertos que estan abiertos y servicios que estan corriendo junto a scriptss que contiene la misma herramienta para automatizar el proceso.
 
-```bash
+```lua
 ─[rebcesp@parrot]─[~]
 └──╼ $nmap -sC -sV 10.10.10.27
 Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-07 23:28 CET
