@@ -104,3 +104,25 @@ Es un protocolo de red que permite compartir archivos, impresoras, etcétera, en
 
 También existe `Samba`, que e suna implementación libre del protocolo SMB con las extensiones de Microsoft. Funciona sobre sistemas operativos `GNU/Linux` y en otros `Unix`
 
+## ¿Microsoft SQL Server?
+
+Es un sistema de gestión de base de datos relacional, desarrollado por la empresa Microsfot. SQL Server ha estado tradicionalmente para sistemas operativos Windows de Microsfot, pero desde 2016 está disponible para GNU/Linux y a partir del 2017 para `Docker` también.
+
+Para conectarse a `SQL Server`, se necesita un Login (Usuario a nivel del servidor). Cuando la política se define como `Windows Authentication` y el servidor se combina con las definiciones del `Domain`, los Logins se definen en el `Active Directory`.
+
+## SMB Puerto 445
+
+Al saber que este puerto esta abierto podemos verificar si se ha permitido el acceso anónimo, ya que los archivos compartidos a menudo almacenan archivos de configuración que contienen contraseñas u otra información confidencial. Podemos usar `smbclient` una herramienta para listar los recursos compartidos disponibles
+
+```bash
+─[rebcesp@parrot]─[~]
+└──╼ $smbclient -N -L \\\\10.10.10.27\\
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	backups         Disk      
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+SMB1 disabled -- no workgroup available
+```
