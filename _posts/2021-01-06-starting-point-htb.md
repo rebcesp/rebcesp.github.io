@@ -98,3 +98,9 @@ Nmap done: 1 IP address (1 host up) scanned in 17.20 seconds
 ```
 En este punto podemos ver que tenemos dos puertos relevantes que nos interesan son el `445` y el `1433` los cuales estan abiertos y sus servicios que corren son `SMB` y `Microsoft SQL Server 2017`
 
+## ¿Qué es SMB?
+
+Es un protocolo de red que permite compartir archivos, impresoras, etcétera, entre nodos de una red de computadoras que usan el sistema operativo `Microsoft Windows`
+
+También existe `Samba`, que e suna implementación libre del protocolo SMB con las extensiones de Microsoft. Funciona sobre sistemas operativos `GNU/Linux` y en otros `Unix`
+
