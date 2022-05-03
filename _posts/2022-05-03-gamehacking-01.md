@@ -8,13 +8,7 @@ published: yes
 
 # Introducción
 
-* Exploit: Programa o código que se `aprovecha un agujero de seguridad(vulnerabilidad)` en una aplicación o sistema, de forma que un atacante podría usarla en su beneficio.
-
-El entorno donde se crearán los exploits y se verán ejecución será en un sistema operativo GNU/Linux de 32 bits. En esta ocasión usare una distro de Debian 10 Buster de 32 bits, virtualizado con todas las mitigaciones deshabilitadas. Vamos a ir viendo como configurar para habilitar y deshabilitar estas protecciones en un sistema `GNU/Linux`.
-
-Para comenzar con los exploits básicos es necesario, pero a medidad que se profundiza en técnicas de ataque más avanzadas se procede a deshabilitar las mitigaciones.
-
-Necesitaremos instalar herramientas de analisis de binarios y debugging
+El hacking de videojuegos es una mezcla entre lo exótico y complejo, no creas que vas aprender a escribir trucos desde una consola como en  `GTA` Vice City o Call Of Duty para tener vida infinita o todas las armas, ser inmortal, NO!  aqui aprenderas como un hacker! desde como funciona una computadora, las partes del hardware que tiene y que hace cada una de ella, como procesa la información a bajo nivel, como interactuar con el código maquina y poder reversear esto, modificar funciones depurando nuestro codigo, inyectando DLLs, crear POC multihacking. No se diga mas y empecemos.
 
 ## Configuraciones Mitigaciones / Herramientas de Análisis
 
