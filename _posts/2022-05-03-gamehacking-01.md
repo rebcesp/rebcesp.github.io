@@ -8,7 +8,14 @@ published: yes
 
 # Introducción
 
-El hacking de videojuegos es una mezcla entre lo exótico y complejo, no creas que vas aprender a escribir trucos desde una consola como en  `GTA` Vice City o Call Of Duty para tener vida infinita o todas las armas, ser inmortal, NO!  aqui aprenderas como un hacker! desde como funciona una computadora, las partes del hardware que tiene y que hace cada una de ella, como procesa la información a bajo nivel, como interactuar con el código maquina y poder reversear esto, modificar funciones depurando nuestro codigo, inyectando DLLs, crear POC multihacking. No se diga mas y empecemos.
+El hacking de videojuegos es una mezcla entre lo exótico y complejo, no creas que escribiendo trucos desde una consola para  `GTA` Vice City, Call Of Duty o Medall Of Honor donde puedes tener vida infinita, todas las armas, ser inormtal, te convierte en  "`Hacker`", NOOOO!, este articulo se trata justamente de eso; de profundizar como es que funcionan los videojuegos a bajo nivel y crear programas, Inyecciones Dlls, depurar codigo, localizar direcciones de memoria. Par asi mismo poder alterar el funcionamiento de los videojuegos y desarrollar tus propios Hacks como un verdadero H4X0R. Empecemos.
+
+
+
+
+
+
+aqui aprenderas como un hacker! desde como funciona una computadora, las partes del hardware que tiene y que hace cada una de ella, como procesa la información a bajo nivel, como interactuar con el código maquina y poder reversear esto, modificar funciones depurando nuestro codigo, inyectando DLLs, crear POC multihacking. No se diga mas y empecemos.
 
 ## Configuraciones Mitigaciones / Herramientas de Análisis
 
