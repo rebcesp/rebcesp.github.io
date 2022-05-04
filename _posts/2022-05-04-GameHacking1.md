@@ -29,7 +29,7 @@ TARJETA MADRE: Une todos estos componentes y les permiten comunicarse.
 Es el cerebro de la computadora, también llamado `procesador`. `Es el responsable de ejecutar instrucciones`. Estas instrucciones son simples y varían según la arquitectura. Por ejemplo, una instrucción podría sumar dos números. Para acelerar el tiempo de ejecución, la CPU tiene varias áreas especiales donde puede almacenar y modificar datos. Esto se llaman registros.
 
 Algunos de estos registros son: 
-```lua
+```asm
 eax
 ebx
 ecx
@@ -41,7 +41,7 @@ esp
 ```
 
 Una instrucción de ejemplo podría ser: 
-```lua
+```asm
 add eax, 2  //almacenamos en eax el valor 2
 ```
 
