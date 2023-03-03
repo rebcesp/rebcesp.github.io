@@ -6,14 +6,6 @@ permalink: "blog/activedirectory1"
 published: yes
 ---
 
-# Breve Introducción
-
-Si estas estudiando, y justo es informática, esto te servirá para documentar tus futuras pruebas en casa siempre y cuando en un `entorno preparado` porque recuerda:  _el hacking es un delito_
-
-Si estas trabajando en una area distinta a la tecnologica, es importante que conozcas los objetivos de la empresa tecnológica en la que trabajas. Esto se debe a que la tecnología es una parte integral de la mayoría de las empresas en la actualidad, y sus objetivos tecnológicos pueden afectar a toda la organización.
-
-Si no estas estudiando, ni trabajando y llegaste aqui. `Sumergete en este mundo y empieza a aprender sobre los Directorio Activos.` Lee la teoria calmadamente, un cafe, cigarro(+18), cocacola, cerveza(+18), ponte a practicar...
-
 # ¿Que es un Directorio Activo?
 
 El Directorio Activo es un servicio de Microsoft que se utiliza en entornos de red para administrar y organizar información sobre recursos y usuarios de la red. En esencia, es una base de datos centralizada que contiene información sobre los recursos de la red, como computadoras, impresoras y servidores, así como información sobre los usuarios y grupos que tienen acceso a estos recursos.
