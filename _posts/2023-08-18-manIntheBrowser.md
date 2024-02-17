@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Man in the Browser (MITB) 
-category: hacking,browser,api,mitb
-permalink: "blog/man-in-the-browser"
+title: Reversing Apps 
+category: hacking,reversing,app,android
+permalink: "blog/reversing-app"
 published: yes
 ---
 
-# Man In The Browser 
+# Reversing Apps
 
 ![ManIntheBrowser](https://epact.be/wp-content/uploads/2021/07/man-in-the-browser-1.png)
 
