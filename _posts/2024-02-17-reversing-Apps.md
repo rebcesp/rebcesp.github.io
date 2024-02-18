@@ -8,8 +8,11 @@ published: yes
 
 # Reversing Apps
 
-![ManIntheBrowser](https://epact.be/wp-content/uploads/2021/07/man-in-the-browser-1.png)
+En este post vamos aprender lo básico de realizar ingeneria inversa en una aplicación movil basado en `Android`.
 
+### Androguard
+
+Androguard se trata de un `framework` completo desarrollado en Python que nos permite interactuar directamente con un código malicioso, leer sus recursos, acceder al código, e incluso comparar distintas amenazas para encontrar similitudes o diferencias en sus métodos, clases y recursos. Además también es posible incorporar todas la funcionalidades de Androguard a scripts personalizados en Python para obtener información detallada y de manera sencilla acerca de un archivo. 
 
 
 Se trata de un tipo de ataque informático en el que un atacante logra comprometer la seguridad de un navegador web y se sitúa entre el usuario y las actividades que realiza en línea, lo que le permite interceptar, manipular o robar información sensible.
