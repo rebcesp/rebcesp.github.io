@@ -83,7 +83,6 @@ Este código observa los campos de contraseña en la página y registra sus valo
 
 Podemos verificar que la extensión esta habilitada , hacemos la prueba en una plataforma muy conocida de Streaming `Netflix` abrimos la consola de desarrollador con F12 e ingresamos cualquier usuario por ejemplo `test@gmail.com` y la contraseña `extension123!` Podemos ver que al momento de introducir la contraseña y enviar la solicitud nos captura la contraseña en el console.log() de la herramienta de desarrollador. Esto es posible sosfiticarla para capturar el email, cookies, password y enviarlo a un servidor remoto.
 
-![image](https://github.com/user-attachments/assets/14d13568-2918-4781-be9d-afa7a1d49b87)
 
 
 ### Aviso
