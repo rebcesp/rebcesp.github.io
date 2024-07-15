@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0edada83-a193-4a93-9d83-857140cf5291)---
+---
 layout: post
 title: Extensiones maliciosas capturando credenciales 
 category: hacking,extension,web,javascript
