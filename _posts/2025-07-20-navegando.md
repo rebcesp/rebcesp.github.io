@@ -3,7 +3,7 @@ layout: post
 title: navegando entre la superficie y las profundidades
 category: pensamientos,nostalgia,simple,mente
 permalink: "blog/navegandoentrelasprofundidades"
-published: yes
+published: no
 ---
 
 
