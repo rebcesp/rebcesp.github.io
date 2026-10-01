@@ -2,46 +2,67 @@
 layout: default
 ---
 
-<div class="blog">
-    <h1>Blog Posts:</h1>
-    <ul>
-        {% for post in paginator.posts %}
-        <li>
-            <span class="date">
-              {{ post.date | date: '%d de'}}
-            	{% assign m = post.date | date: "%-m" %}
-					     {% case m %}
-  					   {% when '1' %}Ene.
-  					   {% when '2' %}Feb.
-  					   {% when '3' %}Mar.
-  					   {% when '4' %}Abr.
-  					   {% when '5' %}May.
-  					   {% when '6' %}Jun.
-  					   {% when '7' %}Jul.
-  					   {% when '8' %}Ago.
-  					   {% when '9' %}Sep.
-  					   {% when '10' %}Oct.
-  					   {% when '11' %}Nov.
-  					   {% when '12' %}Dic.
-					   {% endcase %}
-            	{{ post.date | date: '%Y' }}
-            </span> - <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+<h1>{{ site.name }}</h1>
 
-    {% if paginator.total_pages > 1 %}
-    <ul class="pager">
-        {% if paginator.previous_page %}
-        <li class="previous">
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: 'index.html', '/' | replace: '//', '/' }}"><< Página {{paginator.previous_page}}</a>
-        </li>
-        {% endif %}
-        {% if paginator.next_page %}
-        <li class="next">
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Página {{paginator.next_page}} >></a>
-        </li>
-        {% endif %}
-    </ul>
-    {% endif %}
-</div>
+<table width="100%"><tr><td width="50%" valign="top">
+
+<h2>posts</h2>
+
+<ul class="index-list">
+{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a><br>
+    <small>{{ post.date | date: '%d de' }}
+    {% assign m = post.date | date: "%-m" %}
+    {% case m %}
+    {% when '1' %}enero
+    {% when '2' %}febrero
+    {% when '3' %}marzo
+    {% when '4' %}abril
+    {% when '5' %}mayo
+    {% when '6' %}junio
+    {% when '7' %}julio
+    {% when '8' %}agosto
+    {% when '9' %}septiembre
+    {% when '10' %}octubre
+    {% when '11' %}noviembre
+    {% when '12' %}diciembre
+    {% endcase %}
+    {{ post.date | date: 'de %Y' }}</small>
+  </li>
+{% endfor %}
+</ul>
+
+<td width="50%" valign="top">
+
+<h2>páginas</h2>
+
+<ul class="index-list">
+  <li>
+    <a href="/categorias">categorías</a><br>
+    <small>todos los posts por etiqueta</small>
+  </li>
+  <li>
+    <a href="/me">about</a><br>
+    <small>sobre mí</small>
+  </li>
+</ul>
+
+<h2>links</h2>
+
+<ul class="index-list">
+  <li>
+    <a href="https://x.com/rebcesp">x.com/rebcesp</a>
+  </li>
+</ul>
+
+</table>
+
+<footer>
+  <div class="floatright">
+    <a href="https://x.com/rebcesp">x.com/rebcesp</a>
+  </div>
+  <p class="left">
+    Escrito por {{ site.name }}
+  </p>
+</footer>

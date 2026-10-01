@@ -6,3 +6,9 @@
 Gemfile.lock
 _site/
 _drafts/
+
+# credenciales y perfiles VPN - no subir
+keys
+nuevo
+error
+*.ovpn

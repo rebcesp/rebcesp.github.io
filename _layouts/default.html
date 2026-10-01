@@ -1,72 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+<meta charset="utf-8">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+{% if page.title %}
+    <title>{{ page.title }}</title>
+{% else %}
+    <title>{{ site.name }}</title>
+{% endif %}
 
-    {% if page.title %}
-        <title>{{ page.title }}</title>
-    {% else %}
-        <title>{{ site.name }}</title>
-    {% endif %}
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="{{ site.description }}">
-
-    {% if site.google_verification %}
-        <meta name="google-site-verification" content="{{ site.google_verify }}">
-    {% endif %}
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/spoiler.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="/assets/js/LMSpoiler.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.onload = function() {
-            LMSpoiler = new LMSpoiler();
-            LMSpoiler.spoilerParser();
-        };
-    </script>
-</head>
+<link rel="icon" type="image/png" href="/assets/img/logo-160.png">
+<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
 
 <body>
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="header-row">
-                <a class="brand" href="/" aria-label="rebcesp home">rebcesp</a>
-                <nav class="nav" aria-label="Navegación principal">
-                    <a href="/">home</a>
-                    <a href="/categorias">tags</a>
-                    <a href="/me">about</a>
-                    <a href="https://github.com/rebcesp" target="_blank" rel="noreferrer">github</a>
-                    <a href="mailto:mantic21@protonmail.com">email</a>
-                </nav>
-            </div>
-        </header>
 
-        <main class="content-wrap">
-            {{ content }}
-        </main>
+<div class="content">
+{{ content }}
+</div>
 
-        <footer class="page-footer">
-            <div class="cc-line">
-                Este obra está bajo una
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
-            </div>
-            <div class="cc-image">
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
-                    <img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
-                </a>
-            </div>
-        </footer>
-    </div>
 </body>
-
 </html>
