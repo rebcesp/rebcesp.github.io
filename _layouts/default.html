@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#1C1C1C" />
+    <meta name="theme-color" content="#111111" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     {% if page.title %}
@@ -19,10 +19,10 @@
         <meta name="google-site-verification" content="{{ site.google_verify }}">
     {% endif %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/img/favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Kalam&display=swap' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/spoiler.css">
@@ -43,7 +43,6 @@
             <a href="/">
                 <img src=/assets/img/logo.ico alt="logo">
             </a>
-           <!-- <h1>{{ site.name }}</h1> -->
             <ul>
                 {% for item in site.data.navigation %}
                 <li>
@@ -51,10 +50,9 @@
                 </li>
                 {% endfor %}
                 <li><a href="https://github.com/rebcesp" target="_blank" title="GitHub: rebcesp">/github</a></li>
-                <li><a href="https://twitter.com/rebces`p" target="_blank" title="@rebcesp">/twitter</a></li>
-                <li><a href="mantic21@protonmail.com" title="mantic21@protonmail.com">/email</a></li>
+                <li><a href="https://twitter.com/rebcesp" target="_blank" title="@rebcesp">/twitter</a></li>
+                <li><a href="mailto:mantic21@protonmail.com" title="mantic21@protonmail.com">/email</a></li>
             </ul>
-            <hr>
         </div>
         <div class="posts">
             {{ content }}
@@ -65,7 +63,7 @@
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">licencia de Creative Commons Reconocimiento-NoComercial 4.0 Internacional</a>.
             </div>
             <div id="ccimg">
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"  target="_blank">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
                     <img alt="Licencia de Creative Commons" style="width:80px" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
                 </a>
             </div>
