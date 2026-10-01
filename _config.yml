@@ -1,1 +1,19 @@
-...
+permalink: /blog/:title
+disqus: rebcesp
+name: rebcesp
+description: Notas sobre sistemas, código y seguridad.
+google_verification: null
+include:
+  - ".htaccess"
+exclude:
+  - "README.md"
+  - "LICENSE"
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+paginate: 10
+paginate_path: "/blog/page:num/"
+plugins:
+  - jekyll-paginate
