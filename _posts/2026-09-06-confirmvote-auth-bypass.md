@@ -1,7 +1,7 @@
 ---
 layout: post
 title: confirmVote returns the Vote Cast Return Code without verifying the authentication challenge on replayed requests
-categories: [vulnerabilidades, evoting, java]
+categories: [Bug Bounty, APPSec]
 permalink: "blog/confirmvote-auth-bypass"
 published: yes
 ---
